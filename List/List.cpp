@@ -1,4 +1,5 @@
 #include "List.h"
+#include <cstddef>
 #include <cstdio>
 #include <cstdlib>
 
@@ -79,50 +80,127 @@ bool squenceEmpty(SqList L)
 };
 
 void squenceDestroyList()
-{
+    {
 
+    };
+
+bool linkedInitList(LinkedList &L)
+{
+    L = (LNode*)malloc(sizeof(LNode)); // 头指针指向头节点
+    L->next = NULL;
+    return true; 
+};
+
+int linkedLength(LinkedList L)
+{
+    int len = 0;
+    LNode *temp = L;
+    while (temp->next != NULL) {
+        temp = temp->next;
+        len++;
+    }
+    return len;
+};
+
+LNode* linkedLocateElem(LinkedList L, int i)
+{
+    LNode *temp = L;
+    int j = 0;
+    while (temp!=NULL && j<i) {
+        temp = temp->next;
+    }
+    return temp;
+};
+
+LNode* linkedGetElem(LinkedList L, LinkedElemetType e)
+{
+    LNode *temp = L;
+    while (temp->data!= e) {
+        temp = temp->next;
+    }
+    return temp;
+};
+
+void linkedListHeadInsert()
+    {
+
+    };
+
+void linkedListTailInsert()
+    {
+
+    };
+
+
+bool linkedListInsert(LinkedList L , int i ,LinkedElemetType e)
+{
+    LNode *temp = L;
+    int j = 0;
+
+    while (temp != NULL && j < i - 1) {
+        temp = temp->next;
+        j++;
+    }
+
+    if(temp == NULL)
+        return false;
+
+    LNode *newNode = (LNode * )malloc(sizeof(LNode));
+    newNode->data= e;
+    newNode->next= temp->next;
+    temp->next = newNode;
+    return true;
+};
+
+bool linkedListDelete(LinkedList &L, int i, LinkedElemetType &removed)
+{
+    LNode *temp = L;
+    int j = 0;
+
+    while (temp->next!=NULL && j < i -1) {
+        temp = temp->next;
+        j++;
+    }
+
+    if(temp->next == NULL || j > i-1)
+        return false;
+
+    LNode *removedNode = temp->next;
+    temp->next = removedNode->next;
+    removed = removedNode->data;
+    free(removedNode);
+    return true;
 };
 
 
-void linkedInitList(LinkedList &L)
+void linkedPrintList(LinkedList L)
 {
-    L.data = (LinkedElemetType *)malloc(LinkedInitSize * sizeof(LinkedElemetType));
-    L.length = 0;
-    L.maxsize = LinkedInitSize;
+    if(L == NULL) 
+    {
+        printf("LinkedList NOT exists\n.");
+        return;
+    }
+    LNode *temp = L;
+    while (temp->next != NULL) {
+        temp = temp->next;
+        printf("%d -> ",temp->data);
+    }
+    printf("NULL \n");
 };
 
-void linkedLength() 
-{
 
+
+bool linkedEmpty(LinkedList L)
+{
+    return L->next == NULL ;
 };
 
-void linkedLocateElem() 
+void linkedDestroyList(LinkedList &L)
 {
-
-};
-
-void linkedGetElem() 
-{
-
-};
-
-void linkedListInsert() 
-{
-
-};
-void linkedListDelete() 
-{
-
-};
-void linkedPrintList() 
-{
-
-};
-void linkedEmpty() 
-{
-
-};
-void linkedDestroyList() 
-{
-
+    LNode *temp;
+    while (L !=NULL) {
+        temp = L;
+        L=L->next;
+        free(temp);
+    }
 };

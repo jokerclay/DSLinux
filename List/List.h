@@ -22,26 +22,24 @@ bool squenceEmpty       (SqList L);
 void squenceDestroyList (); // since SqList is declared on the stack,
                             // it will be destoryed automatically when the program is done.
 
-
-
 // linked list a -> b -> c
 #define LinkedElemetType int
-#define LinkedInitSize  50
-typedef struct
+typedef struct LNode
 {
-    LinkedElemetType *data;
-    int length;
-    int maxsize;
-} LinkedList;
+    LinkedElemetType data;
+    struct LNode *next;
+}LNode, *LinkedList;
 
-void linkedInitList();
-void linkedLength();
-void linkedLocateElem();
-void linkedGetElem();
-void linkedListInsert();
-void linkedListDelete();
-void linkedPrintList();
-void linkedEmpty();
-void linkedDestroyList();
+bool   linkedInitList    (LinkedList &L);
+int    linkedLength      (LinkedList L);
+LNode* linkedLocateElem  (LinkedList L, int i);
+LNode* linkedGetElem     (LinkedList L, LinkedElemetType e);
+bool   linkedListInsert  (LinkedList L , int i ,LinkedElemetType e);
+void   linkedListHeadInsert();
+void   linkedListTailInsert();
+bool   linkedListDelete(LinkedList &L, int i, LinkedElemetType &removed);
+void   linkedPrintList(LinkedList L);
+bool   linkedEmpty(LinkedList L);
+void   linkedDestroyList(LinkedList &L);
 
 #endif

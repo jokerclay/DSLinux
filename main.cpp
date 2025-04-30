@@ -1,72 +1,56 @@
 #include "main.h"
 #include "List/List.h"
+#include "Log/log.h"
 #include <string>
 
 
 int main()
 {
-    // init
-    SqList L;
-    squenceInitList(L);
-    int len = squenceLength(L);
+    LinkedList L;
+    linkedInitList(L);
+    int linkedListLength = linkedLength(L);
+    Log(INFO,"linkedListLength is " + std::to_string(linkedListLength));
+    /*LNode* target = linkedLocateElem(L,1);*/
 
-    // insert
-    squenceListInsert(L, 1, 69);
-    squenceListInsert(L, 2, 2);
-    squenceListInsert(L, 3, 23);
-    squenceListInsert(L, 4, 34);
-    squenceListInsert(L, 5, 82);
+    Log(INFO,"linked list:");
+    linkedPrintList(L);
+    linkedListInsert(L, 1, 69);
+    linkedListInsert(L, 2, 34);
+    linkedListInsert(L, 3, 35);
+    linkedListInsert(L, 4, 10);
+    linkedListInsert(L, 3, 89);
 
-    // print
-    Log(INFO,"squenceList");
-    squencePrintList(L);
+    Log(INFO,"linked list");
+    linkedPrintList(L);
 
+    LinkedElemetType removedData = 0;
+    if(linkedListDelete(L, 1,removedData))
+    {
+        Log(INFO,"removed data: " + std::to_string(removedData)) ;
+    }else {
+        Log(INFO,"removed data at " + std::to_string(1) + " Failed" );
+    }
 
-    // get position
-    int elementIndex = squenceLocateElem(L, 69);
-    if(elementIndex == -1)
-        Log(ERROR,"Did not find this Element");
-    else 
-        Log(INFO,"Find Element "+ std::to_string(69)+ " at position " + std::to_string(elementIndex));
+    Log(INFO,"linked list");
+    linkedPrintList(L);
+    if(linkedEmpty(L))
+    {
+        Log(ERROR,"linked list is empty " );
+    }else {
 
+        Log(ERROR,"linked list is NOT empty " );
+        Log(INFO,"linked list");
+        linkedPrintList(L);
+    }
 
+    Log(INFO,"linked list");
+    linkedPrintList(L);
 
-    // get element
-    SqElemetType resData;
-    bool res = squenceGetElem(L, 3 , resData);
-    if(res)
-        Log(INFO,"Get  Element at position  "+ std::to_string(3)+ " is " + std::to_string(resData));
-    else
-        Log(ERROR,"Could not get Element at position " + std::to_string(3));
+    Log(INFO,"destroying linked list");
+    linkedDestroyList(L);
 
-
-    // isEmpty
-    if(squenceEmpty(L))
-        Log(INFO,"This squence is Empty");
-    else
-        Log(INFO,"This squence is NOT Empty");
-
-
-    // remove element
-    SqElemetType removedElem5;
-    if(squenceListDelete(L,5,removedElem5))
-        Log(INFO,"Rmoved element " + std::to_string(removedElem5) + " at position " + std::to_string(5));
-    else
-        Log(INFO,"Rmove element at position " + std::to_string(5) + "Failed");
-
-
-    Log(INFO,"squenceList");
-    squencePrintList(L);
-
-
-    SqElemetType removedElem3;
-    if(squenceListDelete(L,3,removedElem3))
-        Log(INFO,"Rmoved element " + std::to_string(removedElem3) + " at position " + std::to_string(3));
-    else
-        Log(INFO,"Rmove element at position " + std::to_string(3) + "Failed");
-
-    Log(INFO,"squenceList");
-    squencePrintList(L);
+    Log(INFO,"linked list");
+    linkedPrintList(L);
 
     return 0;
 }
