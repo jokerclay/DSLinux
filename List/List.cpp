@@ -112,7 +112,7 @@ LNode* linkedLocateElem(LinkedList L, int i)
     return temp;
 };
 
-LNode* linkedGetElem(LinkedList L, LinkedElemetType e)
+LNode* linkedGetElem(LinkedList L, LinkedElementType e)
 {
     LNode *temp = L;
     while (temp->data!= e) {
@@ -121,18 +121,18 @@ LNode* linkedGetElem(LinkedList L, LinkedElemetType e)
     return temp;
 };
 
-void linkedListHeadInsert()
-    {
+bool linkedListHeadInsert(LinkedList &L, LinkedElementType e)
+{
+    return  true;
+};
 
-    };
-
-void linkedListTailInsert()
-    {
-
-    };
+bool linkedListTailInsert(LinkedList &L, LinkedElementType e)
+{
+    return  true;
+};
 
 
-bool linkedListInsert(LinkedList L , int i ,LinkedElemetType e)
+bool linkedListInsert(LinkedList L , int i ,LinkedElementType e)
 {
     LNode *temp = L;
     int j = 0;
@@ -152,7 +152,7 @@ bool linkedListInsert(LinkedList L , int i ,LinkedElemetType e)
     return true;
 };
 
-bool linkedListDelete(LinkedList &L, int i, LinkedElemetType &removed)
+bool linkedListDelete(LinkedList &L, int i, LinkedElementType &removed)
 {
     LNode *temp = L;
     int j = 0;

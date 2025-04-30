@@ -1,7 +1,7 @@
-#include "main.h"
-#include "List/List.h"
-#include "Log/log.h"
 #include <string>
+
+#include "../../Log/log.h"
+#include "../../List/List.h"
 
 
 int main()
