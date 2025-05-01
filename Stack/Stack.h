@@ -13,7 +13,7 @@ typedef struct
 void sqStackInitStack   (sqStack &S);
 bool sqStackStackEmpty  (sqStack S);
 bool sqStackPush        (sqStack &S,sqStackElementType e);
-bool sqStackPop         (sqStack &S,sqStackElementType &e);
+bool sqStackPop         (sqStack &S,sqStackElementType &popedValue);
 bool sqStackGetTop      (sqStack S ,sqStackElementType &topValue);
 void sqStackDestoryStack(sqStack &S); // Since sqStack is implemented base on array,
                                       // it will be destoryed automatically when the

@@ -20,6 +20,16 @@ bool sqStackPush(sqStack &S, sqStackElementType e)
     return true;
 }
 
+bool sqStackPop (sqStack &S,sqStackElementType &popedValue)
+{
+    if(S.top <= -1)
+        return false;
+
+    popedValue = S.data[S.top];
+    S.top-=1;
+    return true;
+};
+
 bool sqStackGetTop (sqStack S,sqStackElementType &topValue)
 {
     if(S.top <=-1) return false;
@@ -27,3 +37,9 @@ bool sqStackGetTop (sqStack S,sqStackElementType &topValue)
     topValue = S.data[S.top];
     return true;
 }
+
+void linkedStackInitStack(linkedStack &S)
+{
+
+}
+
