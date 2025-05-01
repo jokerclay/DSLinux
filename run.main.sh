@@ -5,14 +5,14 @@
 
 set -xe
 
-g++ -c -ggdb ./Log/log.cpp   -o  ./objs/log.o
-g++ -c -ggdb ./List/List.cpp -o  ./objs/List.o
-g++ -c -ggdb main.cpp        -o  ./objs/main.o
+g++ -c -ggdb ./Log/log.cpp     -o  ./objs/log.o
+g++ -c -ggdb ./Stack/Stack.cpp -o  ./objs/Stack.o
+g++ -c -ggdb main.cpp          -o  ./objs/main.o
 
-g++ -ggdb -static  \
-    ./objs/log.o   \
-    ./objs/main.o  \
-    ./objs/List.o  \
+g++ -ggdb -static   \
+    ./objs/log.o    \
+    ./objs/main.o   \
+    ./objs/Stack.o  \
     -o ./objs/main
 
 ./objs/main

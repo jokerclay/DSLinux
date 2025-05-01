@@ -1,7 +1,7 @@
-#include "main.h"
-#include "Stack/Stack.h"
-#include "Log/log.h"
 #include <string>
+
+#include "../../Log/log.h"
+#include "../../Stack/Stack.h"
 
 int main()
 {

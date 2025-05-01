@@ -41,4 +41,20 @@ g++ -ggdb -static  \
 ./objs/list2
 set +xe
 
+echo "--------"
+echo " stack1 "
+echo "--------"
 
+set -xe
+g++ -c -ggdb ./Log/log.cpp                -o  ./objs/log.o
+g++ -c -ggdb ./Stack/Stack.cpp            -o  ./objs/Stack.o
+g++ -c -ggdb ./TestCases/stack/stack1.cpp -o  ./objs/stack1.o
+
+g++ -ggdb -static   \
+    ./objs/log.o    \
+    ./objs/Stack.o  \
+    ./objs/stack1.o \
+    -o ./objs/stack1
+
+./objs/stack1
+set +xe
