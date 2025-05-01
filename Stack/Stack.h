@@ -25,7 +25,7 @@ typedef struct stackNode
 {
     linkedStackElementType data;
     struct stackNode *next;
-}linkedStack;
+}stackNode, *linkedStack;
 
 
 void linkedStackInitStack   (linkedStack &S);

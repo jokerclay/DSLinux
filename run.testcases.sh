@@ -4,57 +4,78 @@ echo "============="
 echo "  testcases  "
 echo "============="
 
-echo "--------"
-echo "  list1 "
-echo "--------"
+echo "--------------------------------------------------------"
+echo "                      sqList                             "
+echo "--------------------------------------------------------"
 
 set -xe
 g++ -c -ggdb ./Log/log.cpp              -o  ./objs/log.o
 g++ -c -ggdb ./List/List.cpp            -o  ./objs/List.o
-g++ -c -ggdb ./TestCases/list/list1.cpp -o  ./objs/list1.o
+g++ -c -ggdb ./TestCases/list/sqList.cpp -o  ./objs/sqList.o
 
 g++ -ggdb -static  \
     ./objs/log.o   \
     ./objs/List.o  \
-    ./objs/list1.o \
-    -o ./objs/list1
+    ./objs/sqList.o \
+    -o ./objs/sqList
 
-./objs/list1
+./objs/sqList
 set +xe
 
 
-echo "--------"
-echo "  list2 "
-echo "--------"
+echo "--------------------------------------------------------"
+echo "                      linkedList                             "
+echo "--------------------------------------------------------"
 
 set -xe
 g++ -c -ggdb ./Log/log.cpp              -o  ./objs/log.o
 g++ -c -ggdb ./List/List.cpp            -o  ./objs/List.o
-g++ -c -ggdb ./TestCases/list/list2.cpp -o  ./objs/list2.o
+g++ -c -ggdb ./TestCases/list/linkedList.cpp -o  ./objs/linkedList.o
 
 g++ -ggdb -static  \
     ./objs/log.o   \
     ./objs/List.o  \
-    ./objs/list2.o \
-    -o ./objs/list2
+    ./objs/linkedList.o \
+    -o ./objs/linkedList
 
-./objs/list2
+./objs/linkedList
 set +xe
 
-echo "--------"
-echo " stack1 "
-echo "--------"
+
+echo "--------------------------------------------------------"
+echo "                      sqStack                            "
+echo "--------------------------------------------------------"
 
 set -xe
 g++ -c -ggdb ./Log/log.cpp                -o  ./objs/log.o
 g++ -c -ggdb ./Stack/Stack.cpp            -o  ./objs/Stack.o
-g++ -c -ggdb ./TestCases/stack/stack1.cpp -o  ./objs/stack1.o
+g++ -c -ggdb ./TestCases/stack/sqStack.cpp -o  ./objs/sqStack.o
 
 g++ -ggdb -static   \
     ./objs/log.o    \
     ./objs/Stack.o  \
-    ./objs/stack1.o \
-    -o ./objs/stack1
+    ./objs/sqStack.o \
+    -o ./objs/sqStack
 
-./objs/stack1
+./objs/sqStack
 set +xe
+
+
+echo "--------------------------------------------------------"
+echo "                      linkedStack                            "
+echo "--------------------------------------------------------"
+
+set -xe
+g++ -c -ggdb ./Log/log.cpp                -o  ./objs/log.o
+g++ -c -ggdb ./Stack/Stack.cpp            -o  ./objs/Stack.o
+g++ -c -ggdb ./TestCases/stack/linkedStack.cpp -o  ./objs/linkedStack.o
+
+g++ -ggdb -static   \
+    ./objs/log.o    \
+    ./objs/Stack.o  \
+    ./objs/linkedStack.o \
+    -o ./objs/linkedStack
+
+./objs/linkedStack
+set +xe
+

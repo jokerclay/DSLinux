@@ -37,8 +37,7 @@ int main()
     {
         Log(ERROR,"linked list is empty " );
     }else {
-
-        Log(ERROR,"linked list is NOT empty " );
+        Log(INFO,"linked list is NOT empty " );
         Log(INFO,"linked list");
         linkedPrintList(L);
     }
