@@ -1,6 +1,6 @@
 #include "main.h"
 #include "Stack/Stack.h"
-#include "Log/log.h"
+#include "DSLog/DSLog.h"
 #include <string>
 
 int main()

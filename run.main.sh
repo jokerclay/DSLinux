@@ -3,14 +3,19 @@
 # the purpose of this project is to help learn and understand data structure and algorithm,
 # clearity first, so, build and link the obj file every time is fine.
 
+# create folder objs if not exist
+if [ ! -d objs ]; then
+    mkdir objs
+fi
+
 set -xe
 
-g++ -c -ggdb ./Log/log.cpp     -o  ./objs/log.o
+g++ -c -ggdb ./DSLog/DSLog.cpp     -o  ./objs/DSLog.o
 g++ -c -ggdb ./Stack/Stack.cpp -o  ./objs/Stack.o
 g++ -c -ggdb main.cpp          -o  ./objs/main.o
 
 g++ -ggdb -static   \
-    ./objs/log.o    \
+    ./objs/DSLog.o    \
     ./objs/main.o   \
     ./objs/Stack.o  \
     -o ./objs/main
