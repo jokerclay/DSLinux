@@ -1,6 +1,5 @@
-#include "main.h"
-#include "Queue/Queue.h"
-#include "DSLog/DSLog.h"
+#include "../../Queue/Queue.h"
+#include "../../DSLog/DSLog.h"
 #include <string>
 
 int main()

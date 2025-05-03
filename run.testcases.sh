@@ -5,14 +5,19 @@ if [ ! -d objs ]; then
     mkdir objs
 fi
 
+banner() {
+    local msg="$1"
+    echo "--------------------------------------------------------"
+    printf "                      %s\n" "$msg"
+    echo "--------------------------------------------------------"
+}
+
+
 echo "============="
 echo "  testcases  "
 echo "============="
 
-echo "--------------------------------------------------------"
-echo "                      sqList                             "
-echo "--------------------------------------------------------"
-
+banner "sqList"
 set -xe
 g++ -c -ggdb ./DSLog/DSLog.cpp           -o  ./objs/DSLog.o
 g++ -c -ggdb ./List/List.cpp             -o  ./objs/List.o
@@ -27,10 +32,7 @@ g++ -ggdb -static   \
 ./objs/sqList
 set +xe
 
-
-echo "--------------------------------------------------------"
-echo "                      linkedList                        "
-echo "--------------------------------------------------------"
+banner "linkedList"
 
 set -xe
 g++ -c -ggdb ./DSLog/DSLog.cpp               -o  ./objs/DSLog.o
@@ -46,11 +48,7 @@ g++ -ggdb -static       \
 ./objs/linkedList
 set +xe
 
-
-echo "--------------------------------------------------------"
-echo "                      sqStack                           "
-echo "--------------------------------------------------------"
-
+banner "sqStack"
 set -xe
 g++ -c -ggdb ./DSLog/DSLog.cpp             -o  ./objs/DSLog.o
 g++ -c -ggdb ./Stack/Stack.cpp             -o  ./objs/Stack.o
@@ -66,10 +64,7 @@ g++ -ggdb -static    \
 set +xe
 
 
-echo "--------------------------------------------------------"
-echo "                      linkedStack                       "
-echo "--------------------------------------------------------"
-
+banner "linkedStack"
 set -xe
 g++ -c -ggdb ./DSLog/DSLog.cpp                 -o  ./objs/DSLog.o
 g++ -c -ggdb ./Stack/Stack.cpp                 -o  ./objs/Stack.o
@@ -82,5 +77,21 @@ g++ -ggdb -static        \
     -o ./objs/linkedStack
 
 ./objs/linkedStack
+set +xe
+
+banner "circleSqQueue"
+
+set -xe
+g++ -c -ggdb ./DSLog/DSLog.cpp                 -o  ./objs/DSLog.o
+g++ -c -ggdb ./Queue/Queue.cpp                 -o  ./objs/Queue.o
+g++ -c -ggdb ./TestCases/queue/circleQueue.cpp -o  ./objs/circleQueue.o
+
+g++ -ggdb -static        \
+    ./objs/DSLog.o       \
+    ./objs/Queue.o       \
+    ./objs/circleQueue.o \
+    -o ./objs/circleQueue
+
+./objs/circleQueue
 set +xe
 
