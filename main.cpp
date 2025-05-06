@@ -58,7 +58,7 @@ int main()
     // 1.read all the bracket into a empty stack squenenly
 
     FILE  *testCaseFile;
-    char filePath[] = "./aaa/bracketMathchingCase1.txt";
+    char filePath[] = "./objs/bracketMathchingCase1.txt";
     char singleChar;
 
     sqStack S;
