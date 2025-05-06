@@ -94,4 +94,3 @@ g++ -ggdb -static        \
 
 ./objs/circleQueue
 set +xe
-
