@@ -1,6 +1,6 @@
-#include "main.h"
-#include "DSLog/DSLog.h"
-#include "Stack/Stack.h"
+#include "../../DSLog/DSLog.h"
+#include "../../Stack/Stack.h"
+
 #include <cstdio>
 
 #define  LEFT_ROUND_BRACKET  '('
@@ -56,11 +56,10 @@ int main()
     /*bracketmatching.cpp*/
 
     // 1.read all the bracket into a empty stack squenenly
-
     FILE  *testCaseFile;
-    char filePath[] = "./aaa/bracketMathchingCase1.txt";
-    char singleChar;
 
+    char filePath[] = "./objs/bracketMathchingCase1.txt";
+    char singleChar;
     sqStack S;
     sqStackInitStack(S);
 
@@ -73,8 +72,7 @@ int main()
 
     while ((singleChar  = fgetc(testCaseFile))!=EOF) {
         /*putchar(singleChar);*/
-        if(isLeftBracket(singleChar))
-        {
+        if(isLeftBracket(singleChar))                                                                                                                                                                                                                                                                        {
             // printf("%c: is left\n",singleChar);
             sqStackPush(S,singleChar);
         }else if(isRightBracket(singleChar)){
@@ -86,7 +84,6 @@ int main()
                 printf("Unmatched closing bracket: %c \n", singleChar);
                 return 1;
             }
-
             sqStackGetTop(S,currentTop);
             if(bracketMatched(singleChar, currentTop))
             {
@@ -105,4 +102,5 @@ int main()
         Log(ERROR, "Unmatched opening brackets remain in the stack");
     }
 }
+
 

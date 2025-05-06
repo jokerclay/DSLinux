@@ -94,3 +94,23 @@ g++ -ggdb -static        \
 
 ./objs/circleQueue
 set +xe
+
+
+banner "sqStack - bracket matching"
+
+cp ./TestCases/stack/bracketMathchingCase* ./objs/
+
+set -xe
+g++ -c -ggdb ./DSLog/DSLog.cpp                     -o  ./objs/DSLog.o
+g++ -c -ggdb ./Stack/Stack.cpp                     -o  ./objs/Stack.o
+g++ -c -ggdb ./TestCases/stack/bracketmatching.cpp -o  ./objs/bracketmatching.o
+
+g++ -ggdb -static            \
+    ./objs/DSLog.o           \
+    ./objs/Stack.o           \
+    ./objs/bracketmatching.o \
+    -o ./objs/bracketmatching
+
+./objs/bracketmatching
+set +xe
+

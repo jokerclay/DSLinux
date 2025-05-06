@@ -11,13 +11,13 @@ fi
 set -xe
 
 g++ -c -ggdb ./DSLog/DSLog.cpp -o  ./objs/DSLog.o
-g++ -c -ggdb ./Queue/Queue.cpp -o  ./objs/Queue.o
+g++ -c -ggdb ./Stack/Stack.cpp -o  ./objs/Stack.o
 g++ -c -ggdb main.cpp          -o  ./objs/main.o
 
 g++ -ggdb -static   \
     ./objs/DSLog.o  \
+    ./objs/Stack.o  \
     ./objs/main.o   \
-    ./objs/Queue.o  \
     -o ./objs/main
 
 ./objs/main
