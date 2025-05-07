@@ -1,66 +1,93 @@
 #include "main.h"
 #include "DSLog/DSLog.h"
-#include "Array/Array.h"
+#include "String/String.h"
+#include <cstdio>
+#include <string>
 
 int main()
 {
+    SString source = {0};
+    SString target  = {0};
 
-/*
-1 2 3
-4 5 6
-7 8 9
-*/
+    if (StrEmpty(source)) 
+        Log(INFO, "source is empty");
+    else
+        Log(INFO, "source is  NOT empty");
 
-    int column =3;
-    int row =3;
-    int array_size = 9;
-    int rowFirst[] = {1,2,3, 4, 5, 6,7, 8, 9};  // 行优先
-    int columnFist[] = {1,4,7, 2, 5, 8,3, 6, 9};// 列优先
-
-    demostrateColumnFirstArray(columnFist,row,column,array_size);
-    demostrateRowFirstArray(rowFirst,row,column,array_size);
-
-// 对称矩阵
-
-/*
-
-1 2 3
-2 1 6
-3 6 1
-
-*/
-    int symmetricArray[] = {1,2,1,3,6,1};
-    demonstrateSymmetricPackedMatrix(symmetricArray, 3);
+    if (StrEmpty(target)) 
+        Log(INFO, "target is empty");
+    else
+        Log(INFO, "target is  NOT empty");
 
 
-// 稀疏矩阵
 
-/*
+    StrAssign(source, "this is a test content");
 
-4 0  0 0 
-0 0  6 0
-0 9  0 0
-0 23 0 0
 
- |||
-  V
+    if (StrEmpty(source)) 
+        Log(INFO, "source is empty");
+    else
+        Log(INFO, "source is  NOT empty");
 
-i j a_{ij}
-0 0 4
-1 2 6
-2 1 9
-3 1 23
+    if (StrEmpty(target)) 
+        Log(INFO, "target is empty");
+    else
+        Log(INFO, "target is  NOT empty");
 
-*/
 
-    int sparseMatrix[] = {
-        4,  0,  0,  0,
-        0,  0,  6,  0,
-        0,  9,  0,  0,
-        0, 23,  0,  0
-    };
 
-    demonstrateSparseMatrix(sparseMatrix, 4, 4);
+    StrCopy(target, source);
+
+
+    if (StrEmpty(source)) 
+        Log(INFO, "source is empty");
+    else
+        Log(INFO, "source is  NOT empty");
+
+    if (StrEmpty(target)) 
+        Log(INFO, "target is empty");
+    else
+        Log(INFO, "target is  NOT empty");
+
+
+
+    SString s1 ={0};
+    SString s2 ={0};
+
+    StrAssign(s1, "apple");
+    StrAssign(s2, "apricot");
+
+    int res = StrCompare(s1, s2);
+
+    if(res < 0)
+        Log(INFO, "apple < apricot");
+    else if (res  == 0)
+        Log(INFO, "apple = apricot");
+    else
+        Log(INFO, "apple > apricot");
+
+
+    Log(INFO, "s1: apple length : " + std::to_string(StrLength(s1)));
+
+
+    SString s3 ={0};
+    SString s3sub ={0};
+    StrAssign(s3, "computer");
+
+    if(SubString(s3sub, s3,2,3))
+    {
+        Log(INFO, "\"computer\" from position 2 add length 3 compose to substring:");
+        for(int i =0; i < s3sub.length; i++)
+            putchar(s3sub.ch[i]);
+
+        putchar('\n');
+    }else {
+        Log(ERROR, "Invalid substring range");
+    }
+
+
+
+
 
     return 0;
 }
