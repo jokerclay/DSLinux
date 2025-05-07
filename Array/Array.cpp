@@ -37,7 +37,6 @@ void demostrateColumnFirstArray(int* array, int row, int column, int size)
     }
 }
 
-
 void demonstrateSymmetricPackedMatrix(int* packed, int n)
 {
     printf("demonstrateSymmetricPackedMatrix (%dx%d):\n", n, n);

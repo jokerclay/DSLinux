@@ -113,3 +113,17 @@ g++ -ggdb -static            \
 ./objs/bracketmatching
 set +xe
 
+
+banner "Array"
+set -xe
+g++ -c -ggdb ./Array/Array.cpp           -o  ./objs/Array.o
+g++ -c -ggdb ./TestCases/array/array.cpp -o  ./objs/array.o
+
+g++ -ggdb -static   \
+    ./objs/Array.o  \
+    ./objs/array.o  \
+    -o ./objs/array
+
+./objs/array
+set +xe
+
