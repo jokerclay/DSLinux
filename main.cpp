@@ -1,108 +1,66 @@
 #include "main.h"
 #include "DSLog/DSLog.h"
-#include "Stack/Stack.h"
-#include <cstdio>
-
-#define  LEFT_ROUND_BRACKET  '('
-#define RIGHT_ROUND_BRACKET  ')'
-
-#define  LEFT_SQUARE_BRACKET '['
-#define RIGHT_SQUARE_BRACKET ']'
-
-#define  LEFT_CURLY_BRACKET  '{'
-#define RIGHT_CURLY_BRACKET  '}'
-
-
-
-bool isLeftBracket(char bracket)
-{
-    if((bracket == LEFT_ROUND_BRACKET )  ||
-        (bracket == LEFT_SQUARE_BRACKET) ||
-        (bracket == LEFT_CURLY_BRACKET))
-    {
-        return true;
-    }
-    return false ;
-}
-
-bool isRightBracket(char bracket)
-{
-    if((bracket == RIGHT_ROUND_BRACKET  )  ||
-        (bracket == RIGHT_SQUARE_BRACKET ) ||
-        (bracket == RIGHT_CURLY_BRACKET))
-    {
-        return true;
-    }
-    return false ;
-}
-
-bool bracketMatched(char newComer, char stackTop)
-{
-    if(stackTop == LEFT_CURLY_BRACKET && newComer == RIGHT_CURLY_BRACKET)
-        return true;
-
-    if(stackTop == LEFT_ROUND_BRACKET && newComer == RIGHT_ROUND_BRACKET)
-        return true;
-
-    if(stackTop == LEFT_SQUARE_BRACKET && newComer == RIGHT_SQUARE_BRACKET)
-        return true;
-
-    return false;
-}
+#include "Array/Array.h"
 
 int main()
 {
 
-    /*bracketmatching.cpp*/
+/*
+1 2 3
+4 5 6
+7 8 9
+*/
 
-    // 1.read all the bracket into a empty stack squenenly
+    int column =3;
+    int row =3;
+    int array_size = 9;
+    int rowFirst[] = {1,2,3, 4, 5, 6,7, 8, 9};  // 行优先
+    int columnFist[] = {1,4,7, 2, 5, 8,3, 6, 9};// 列优先
 
-    FILE  *testCaseFile;
-    char filePath[] = "./objs/bracketMathchingCase1.txt";
-    char singleChar;
+    demostrateColumnFirstArray(columnFist,row,column,array_size);
+    demostrateRowFirstArray(rowFirst,row,column,array_size);
 
-    sqStack S;
-    sqStackInitStack(S);
+// 对称矩阵
 
-    testCaseFile = fopen(filePath, "r");
-    if(testCaseFile == NULL)
-    {
-        Log(ERROR,"Can't open test case file" );
-        return 1;
-    }
+/*
 
-    while ((singleChar  = fgetc(testCaseFile))!=EOF) {
-        /*putchar(singleChar);*/
-        if(isLeftBracket(singleChar))
-        {
-            // printf("%c: is left\n",singleChar);
-            sqStackPush(S,singleChar);
-        }else if(isRightBracket(singleChar)){
-            // printf("%c: is right\n",singleChar);
-            int currentTop;
-            int popedValue;
+1 2 3
+2 1 6
+3 6 1
 
-            if(sqStackStackEmpty(S)) {
-                printf("Unmatched closing bracket: %c \n", singleChar);
-                return 1;
-            }
+*/
+    int symmetricArray[] = {1,2,1,3,6,1};
+    demonstrateSymmetricPackedMatrix(symmetricArray, 3);
 
-            sqStackGetTop(S,currentTop);
-            if(bracketMatched(singleChar, currentTop))
-            {
-                sqStackPop(S, popedValue);
-            }else {
-                printf("Unmatched character %c\n", singleChar);
-            }
-        }
-    }
 
-    fclose(testCaseFile);
+// 稀疏矩阵
 
-    if (sqStackStackEmpty(S)) {
-        Log(INFO, "All brackets are matched");
-    } else {
-        Log(ERROR, "Unmatched opening brackets remain in the stack");
-    }
+/*
+
+4 0  0 0 
+0 0  6 0
+0 9  0 0
+0 23 0 0
+
+ |||
+  V
+
+i j a_{ij}
+0 0 4
+1 2 6
+2 1 9
+3 1 23
+
+*/
+
+    int sparseMatrix[] = {
+        4,  0,  0,  0,
+        0,  0,  6,  0,
+        0,  9,  0,  0,
+        0, 23,  0,  0
+    };
+
+    demonstrateSparseMatrix(sparseMatrix, 4, 4);
+
+    return 0;
 }
-
