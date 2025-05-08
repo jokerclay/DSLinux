@@ -22,4 +22,12 @@ int StrLength(SString source);
 
 bool SubString(SString &subString, SString source,int pos, int len);
 
+bool Concat(SString &target, SString source1, SString source2);
+
+int Index(SString source, SString target);
+
+void ClearString(SString &source);
+
+void DestoryString(SString &source); // memory allocate on stack, no need for this.
+
 #endif // _STRING_H

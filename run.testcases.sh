@@ -127,3 +127,18 @@ g++ -ggdb -static   \
 ./objs/array
 set +xe
 
+
+banner "String"
+set -xe
+g++ -c -ggdb ./DSLog/DSLog.cpp                 -o  ./objs/DSLog.o
+g++ -c -ggdb ./String/String.cpp           -o  ./objs/String.o
+g++ -c -ggdb ./TestCases/string/string.cpp -o  ./objs/string.o
+
+g++ -ggdb -static   \
+    ./objs/DSLog.o  \
+    ./objs/String.o  \
+    ./objs/string.o  \
+    -o ./objs/string
+
+./objs/string
+set +xe

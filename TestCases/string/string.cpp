@@ -1,6 +1,5 @@
-#include "main.h"
-#include "DSLog/DSLog.h"
-#include "String/String.h"
+#include "../../DSLog/DSLog.h"
+#include "../../String/String.h"
 
 int main()
 {
@@ -144,7 +143,8 @@ int main()
     else
         Log(INFO, "T3 are NOT cleared");
 
-
-
     return 0;
 }
+
+
+
