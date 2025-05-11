@@ -102,6 +102,32 @@ int Index(SString source, SString target)
     return 0; // not found
 }
 
+
+
+
+int Index2(SString source, SString target)
+{
+    int i = 0, j = 0;
+
+    while (i < source.length && j < target.length) {
+        if (source.ch[i] == target.ch[j]) {
+            ++i;
+            ++j;
+        } else {
+            i = i - j + 1;
+            j = 0;
+        }
+    }
+
+    if (j == target.length) {
+        return i - target.length + 1; // return 1-based index
+    } else {
+        return 0;
+    }
+}
+
+
+
 void ClearString(SString &source)
 {
     source.length = 0;

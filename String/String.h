@@ -26,6 +26,8 @@ bool Concat(SString &target, SString source1, SString source2);
 
 int Index(SString source, SString target);
 
+int Index2(SString source, SString target);
+
 void ClearString(SString &source);
 
 void DestoryString(SString &source); // memory allocate on stack, no need for this.
