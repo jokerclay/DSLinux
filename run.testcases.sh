@@ -142,3 +142,20 @@ g++ -ggdb -static   \
 
 ./objs/string
 set +xe
+
+
+banner "Binary Tree"
+set -xe
+g++ -c -ggdb ./Tree/BinaryTree.cpp     -o  ./objs/BinaryTree.o
+g++ -c -ggdb ./Queue/Queue.cpp         -o  ./objs/Queue.o
+g++ -c -ggdb ./TestCases/tree/tree.cpp -o  ./objs/tree.o
+
+g++ -ggdb -static        \
+    ./objs/BinaryTree.o  \
+    ./objs/Queue.o       \
+    ./objs/tree.o        \
+    -o ./objs/tree
+
+./objs/tree
+set +xe
+

@@ -1,6 +1,6 @@
-#include "main.h"
-#include "Tree/BinaryTree.h"
+#include "../../Tree/BinaryTree.h"
 #include <cstdio>
+
 
 int main()
 {
@@ -36,7 +36,6 @@ int main()
     printf("\n");
 
 
-
     // post-order
     printf("post-order:\t");
     PostOrder(root);
@@ -47,3 +46,6 @@ int main()
     PrintTree(root, 0);
     FreeTree(root);
 }
+
+
+

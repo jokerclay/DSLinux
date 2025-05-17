@@ -9,7 +9,7 @@
 //         v
 //
 
-#define sqQueueMaxSize 5
+#define sqQueueMaxSize 255
 #define sqQueueElementType int
 typedef struct {
     sqQueueElementType data[sqQueueMaxSize];
