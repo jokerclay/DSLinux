@@ -73,9 +73,9 @@ files
 
 
 
-路虽远，行则将至。事虽难，做则可成。菜就多练！
+<u>"路虽远，行则将至。事虽难，做则可成。菜就多练！" </u>steal from [Joe Chen](https://github.com/unknwon)
 
-steal from [Joe Chen](https://github.com/unknwon)
+
 
 
 
