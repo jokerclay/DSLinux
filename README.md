@@ -70,3 +70,12 @@ files
 16 directories, 30 files
 
 ```
+
+
+
+路虽远，行则将至。事虽难，做则可成。菜就多练！
+
+steal from [Joe Chen](https://github.com/unknwon)
+
+
+
