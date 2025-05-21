@@ -16,3 +16,57 @@ $./run.main.sh # build and run main.cpp
 $./run.testcases.sh # build and run *.cpp in  ./TestCases/ folder
 ```
 
+
+files
+
+```text
+.
+├── Array
+│   ├── Array.cpp
+│   └── Array.h
+├── DSLog
+│   ├── DSLog.cpp
+│   └── DSLog.h
+├── List
+│   ├── List.cpp
+│   └── List.h
+├── main.cpp
+├── main.h
+├── objs
+├── ProjectTreeView
+├── Queue
+│   ├── Queue.cpp
+│   └── Queue.h
+├── README.md
+├── run.main.sh
+├── run.testcases.sh
+├── Stack
+│   ├── Stack.cpp
+│   └── Stack.h
+├── String
+│   ├── String.cpp
+│   └── String.h
+├── TestCases
+│   ├── array
+│   │   └── array.cpp
+│   ├── list
+│   │   ├── linkedList.cpp
+│   │   └── sqList.cpp
+│   ├── queue
+│   │   └── circleQueue.cpp
+│   ├── stack
+│   │   ├── bracketmatching.cpp
+│   │   ├── bracketMathchingCase1.txt
+│   │   ├── linkedStack.cpp
+│   │   └── sqStack.cpp
+│   ├── string
+│   │   └── string.cpp
+│   └── tree
+│       └── tree.cpp
+└── Tree
+    ├── BinaryTree.cpp
+    └── BinaryTree.h
+
+16 directories, 30 files
+
+```
