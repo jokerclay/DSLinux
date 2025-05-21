@@ -71,9 +71,7 @@ files
 
 ```
 
-
-
-<u>"路虽远，行则将至。事虽难，做则可成。菜就多练！" </u>steal from [Joe Chen](https://github.com/unknwon)
+["路虽远，行则将至。事虽难，做则可成。菜就多练！"  steal from Joe Chen](https://github.com/unknwon)
 
 
 
