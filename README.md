@@ -70,3 +70,6 @@ files
 16 directories, 30 files
 
 ```
+
+["路虽远，行则将至。事虽难，做则可成。菜就多练！"  The slogan was stolen from Joe Chen’s](https://github.com/unknwon)
+
