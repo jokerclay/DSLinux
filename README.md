@@ -32,14 +32,17 @@ files
 │   └── List.h
 ├── main.cpp
 ├── main.h
-├── objs
-├── ProjectTreeView
 ├── Queue
 │   ├── Queue.cpp
 │   └── Queue.h
 ├── README.md
 ├── run.main.sh
 ├── run.testcases.sh
+├── Sort
+│   └── 01_insertSort
+│       ├── clean.sh
+│       ├── insert_sort.c
+│       └── run.sh
 ├── Stack
 │   ├── Stack.cpp
 │   └── Stack.h
@@ -67,7 +70,7 @@ files
     ├── BinaryTree.cpp
     └── BinaryTree.h
 
-16 directories, 30 files
+18 directories, 62 files
 
 ```
 
