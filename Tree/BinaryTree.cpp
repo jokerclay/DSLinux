@@ -93,7 +93,7 @@ void PrintTree(BiTree root, int space) {
 
 void IterateBinaryTreeByLevel(BiTree root)
 {
-      if (root == NULL)
+    if (root == NULL)
         return;
 
     sqQueue Q;
@@ -104,7 +104,7 @@ void IterateBinaryTreeByLevel(BiTree root)
 
     printf("level-order:\t");
 
-        while (!sqQueueQueueEmpty(Q))
+    while (!sqQueueQueueEmpty(Q))
     {
         BiNode* current;
         sqQueueElementType e;

@@ -10,16 +10,6 @@ fi
 
 set -xe
 
-g++ -c -ggdb ./DSLog/DSLog.cpp     -o  ./objs/DSLog.o
-g++ -c -ggdb ./Tree/BinaryTree.cpp -o  ./objs/BinaryTree.o
-g++ -c -ggdb ./Queue/Queue.cpp     -o  ./objs/Queue.o
-g++ -c -ggdb main.cpp              -o  ./objs/main.o
+g++ -ggdb ./Sort/01_insertSort/insert_sort.c  -o  ./objs/insert_sort
 
-g++ -ggdb -static        \
-    ./objs/DSLog.o       \
-    ./objs/Queue.o       \
-    ./objs/BinaryTree.o  \
-    ./objs/main.o        \
-    -o ./objs/main
-
-./objs/main
+./objs/insert_sort

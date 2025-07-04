@@ -159,3 +159,13 @@ g++ -ggdb -static        \
 ./objs/tree
 set +xe
 
+
+
+banner "Insert Sort"
+set -xe
+g++ -ggdb ./Sort/01_insertSort/insert_sort.c -o ./objs/insert_sort
+./objs/insert_sort
+set +xe
+
+
+
