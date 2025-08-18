@@ -79,9 +79,9 @@
 
 5.3.2 线索二叉树
 
-
-*/
-
+ 
+ */
+ 
 
 #define BITREEDATATYPE int
 
@@ -91,14 +91,14 @@ typedef struct BiNode
     struct BiNode *lchild, *rchild;
 } BiNode, *BiTree;
 
-BiNode* CreateNode(BITREEDATATYPE value);
-BiNode* InsertNode(BiTree root,BITREEDATATYPE value);
-void InOrder(BiTree root);
-void PreOrder(BiTree root);
-void PostOrder(BiTree root);
-void IterateBinaryTreeByLevel(BiTree root);
-void FreeTree(BiTree root);
-void PrintTree(BiTree root, int space);
+BiNode* CreateNode              (BITREEDATATYPE value);
+BiNode* InsertNode              (BiTree root,BITREEDATATYPE value);
+void    InOrder                 (BiTree root);
+void    PreOrder                (BiTree root);
+void    PostOrder               (BiTree root);
+void    IterateBinaryTreeByLevel(BiTree root);
+void    FreeTree                (BiTree root);
+void    PrintTree               (BiTree root, int space);
 
 
 #endif // _BINARYTREE_H
