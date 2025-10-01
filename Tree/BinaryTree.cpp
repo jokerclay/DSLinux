@@ -8,6 +8,10 @@
 BiNode* CreateNode(BITREEDATATYPE  value)
 {
     BiNode* new_node = (BiNode*)malloc(sizeof(BiNode));
+    if (new_node == NULL) {
+        printf("Error: Memory allocation failed in CreateNode\n");
+        return NULL;
+    }
     new_node->data = value;
     new_node->lchild = new_node->rchild = NULL;
     return new_node;
@@ -16,7 +20,14 @@ BiNode* CreateNode(BITREEDATATYPE  value)
 
 BiNode* InsertNode(BiTree  root,BITREEDATATYPE value)
 {
-    if(root ==NULL) return CreateNode(value);
+    if(root ==NULL) {
+        BiNode* new_node = CreateNode(value);
+        if (new_node == NULL) {
+            printf("Error: Failed to create node in InsertNode\n");
+            return NULL;
+        }
+        return new_node;
+    }
 
     if(value < root->data)
         root->lchild = InsertNode(root->lchild, value);

@@ -9,18 +9,22 @@ int main()
 
     BiTree root = NULL;
 
-    // orignal data
-    printf("orignal data:\t");
+    // original data
+    printf("original data:\t");
     for (int i = 0; i < n; ++i)
     {
         printf("%d ",values[i]);
     }
     printf("\n");
 
-    // constract bi-tree with data
+    // construct bi-tree with data
     for (int i = 0; i < n; ++i)
     {
         root = InsertNode(root, values[i]);
+        if (root == NULL) {
+            printf("Error: Failed to insert value %d into binary tree\n", values[i]);
+            return 1;
+        }
     }
 
 

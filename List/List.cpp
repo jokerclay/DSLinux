@@ -87,8 +87,12 @@ void squenceDestroyList()
 bool linkedInitList(LinkedList &L)
 {
     L = (LNode*)malloc(sizeof(LNode)); // 头指针指向头节点
+    if (L == NULL) {
+        printf("Error: Memory allocation failed in linkedInitList\n");
+        return false;
+    }
     L->next = NULL;
-    return true; 
+    return true;
 };
 
 int linkedLength(LinkedList L)
@@ -146,6 +150,10 @@ bool linkedListInsert(LinkedList L , int i ,LinkedElementType e)
         return false;
 
     LNode *newNode = (LNode * )malloc(sizeof(LNode));
+    if (newNode == NULL) {
+        printf("Error: Memory allocation failed in linkedListInsert\n");
+        return false;
+    }
     newNode->data= e;
     newNode->next= temp->next;
     temp->next = newNode;

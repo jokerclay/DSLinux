@@ -1,5 +1,6 @@
 #include "Stack.h"
 #include <cstdlib>
+#include <cstdio>
 
 
 void sqStackInitStack(sqStack &S)
@@ -43,6 +44,11 @@ bool sqStackGetTop (sqStack S,sqStackElementType &topValue)
 void linkedStackInitStack(linkedStack &S)
 {
     stackNode *head_node = (stackNode *)malloc(sizeof(stackNode));
+    if (head_node == NULL) {
+        printf("Error: Memory allocation failed in linkedStackInitStack\n");
+        S = NULL;
+        return;
+    }
     head_node->data = 0;
     head_node->next = NULL;
     S = head_node;
@@ -58,6 +64,10 @@ bool linkedStackPush (linkedStack &S, sqStackElementType e)
 {
     if(S == NULL) return false;
     stackNode *new_node = (stackNode *)malloc(sizeof(stackNode));
+    if (new_node == NULL) {
+        printf("Error: Memory allocation failed in linkedStackPush\n");
+        return false;
+    }
 
     new_node->next = S->next;
     new_node->data = e;
