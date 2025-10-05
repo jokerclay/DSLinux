@@ -1,6 +1,7 @@
 #include "main.h"
 #include "Tree/BinaryTree.h"
 #include <cstdio>
+#include "DSLog/DSLog.h"
 
 int main()
 {
@@ -22,7 +23,7 @@ int main()
     {
         root = InsertNode(root, values[i]);
         if (root == NULL) {
-            printf("Error: Failed to insert value %d into binary tree\n", values[i]);
+            LOG_ERROR_F("Failed to insert value %d into binary tree", values[i]);
             return 1;
         }
     }

@@ -2,6 +2,7 @@
 #include <cstddef>
 #include <cstdio>
 #include <cstdlib>
+#include "../DSLog/DSLog.h"
 
 void squenceInitList(SqList &L)
 {
@@ -88,7 +89,7 @@ bool linkedInitList(LinkedList &L)
 {
     L = (LNode*)malloc(sizeof(LNode)); // 头指针指向头节点
     if (L == NULL) {
-        printf("Error: Memory allocation failed in linkedInitList\n");
+        LOG_ERROR("Memory allocation failed in linkedInitList");
         return false;
     }
     L->next = NULL;
@@ -151,7 +152,7 @@ bool linkedListInsert(LinkedList L , int i ,LinkedElementType e)
 
     LNode *newNode = (LNode * )malloc(sizeof(LNode));
     if (newNode == NULL) {
-        printf("Error: Memory allocation failed in linkedListInsert\n");
+        LOG_ERROR("Memory allocation failed in linkedListInsert");
         return false;
     }
     newNode->data= e;

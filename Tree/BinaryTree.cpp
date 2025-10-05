@@ -3,13 +3,14 @@
 #include <cstdlib>
 #include <stdint.h>
 
-#include "../Queue/Queue.h" 
+#include "../Queue/Queue.h"
+#include "../DSLog/DSLog.h" 
 
 BiNode* CreateNode(BITREEDATATYPE  value)
 {
     BiNode* new_node = (BiNode*)malloc(sizeof(BiNode));
     if (new_node == NULL) {
-        printf("Error: Memory allocation failed in CreateNode\n");
+        LOG_ERROR("Memory allocation failed in CreateNode");
         return NULL;
     }
     new_node->data = value;
@@ -23,7 +24,7 @@ BiNode* InsertNode(BiTree  root,BITREEDATATYPE value)
     if(root ==NULL) {
         BiNode* new_node = CreateNode(value);
         if (new_node == NULL) {
-            printf("Error: Failed to create node in InsertNode\n");
+            LOG_ERROR_F("Failed to create node in InsertNode for value %d", value);
             return NULL;
         }
         return new_node;

@@ -1,6 +1,7 @@
 #include "Stack.h"
 #include <cstdlib>
 #include <cstdio>
+#include "../DSLog/DSLog.h"
 
 
 void sqStackInitStack(sqStack &S)
@@ -45,7 +46,7 @@ void linkedStackInitStack(linkedStack &S)
 {
     stackNode *head_node = (stackNode *)malloc(sizeof(stackNode));
     if (head_node == NULL) {
-        printf("Error: Memory allocation failed in linkedStackInitStack\n");
+        LOG_ERROR("Memory allocation failed in linkedStackInitStack");
         S = NULL;
         return;
     }
@@ -65,7 +66,7 @@ bool linkedStackPush (linkedStack &S, sqStackElementType e)
     if(S == NULL) return false;
     stackNode *new_node = (stackNode *)malloc(sizeof(stackNode));
     if (new_node == NULL) {
-        printf("Error: Memory allocation failed in linkedStackPush\n");
+        LOG_ERROR("Memory allocation failed in linkedStackPush");
         return false;
     }
 

@@ -134,8 +134,8 @@ g++ -c -ggdb ./DSLog/DSLog.cpp                 -o  ./objs/DSLog.o
 g++ -c -ggdb ./String/String.cpp           -o  ./objs/String.o
 g++ -c -ggdb ./TestCases/string/string.cpp -o  ./objs/string.o
 
-g++ -ggdb -static   \
-    ./objs/DSLog.o  \
+g++ -ggdb -static    \
+    ./objs/DSLog.o   \
     ./objs/String.o  \
     ./objs/string.o  \
     -o ./objs/string
@@ -149,9 +149,11 @@ set -xe
 g++ -c -ggdb ./Tree/BinaryTree.cpp     -o  ./objs/BinaryTree.o
 g++ -c -ggdb ./Queue/Queue.cpp         -o  ./objs/Queue.o
 g++ -c -ggdb ./TestCases/tree/tree.cpp -o  ./objs/tree.o
+g++ -c -ggdb ./DSLog/DSLog.cpp           -o  ./objs/DSLog.o
 
 g++ -ggdb -static        \
     ./objs/BinaryTree.o  \
+    ./objs/DSLog.o       \
     ./objs/Queue.o       \
     ./objs/tree.o        \
     -o ./objs/tree
@@ -166,6 +168,3 @@ set -xe
 g++ -ggdb ./Sort/01_insertSort/insert_sort.c -o ./objs/insert_sort
 ./objs/insert_sort
 set +xe
-
-
-
