@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef enum 
+typedef enum
 {
     NODE_RED,
     NODE_BLACK
@@ -22,13 +22,12 @@ typedef struct RBNode
 
 int main()
 {
-
     RBNode left = {
-        .key = 8,
+        .key    = 8,
         .parent = NULL,
-        .left = NULL,
-        .right = NULL,
-        .color = NODE_RED
+        .left   = NULL,
+        .right  = NULL,
+        .color  = NODE_RED
     };
 
     RBNode right = {
